@@ -9,11 +9,6 @@ public class Posicion {
 	private char columna;
 
 	public Posicion(int fila, char columna) {
-		if (fila < 1 | fila > 8) {
-			throw new IllegalArgumentException("La fila devuelta no es la esperada.");
-		} else if (columna < 'a' | columna > 'h') {
-			throw new IllegalArgumentException("La columna devuelta no es la esperada.");
-		}
 		setFila(fila);
 		setColumna(columna);
 	}
@@ -47,4 +42,6 @@ public class Posicion {
 	public char getColumna() {
 		return columna;
 	}
+
 }
+ 
