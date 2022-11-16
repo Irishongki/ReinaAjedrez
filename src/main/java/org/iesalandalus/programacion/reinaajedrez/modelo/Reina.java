@@ -85,4 +85,10 @@ public class Reina {
 		}
 
 	}
+
+	@Override
+	public String toString() {
+		return String.format("color=" + color + ", posicion=(" + posicion + ")");
+	}
+
 }
