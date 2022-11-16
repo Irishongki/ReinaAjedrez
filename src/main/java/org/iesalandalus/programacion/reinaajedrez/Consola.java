@@ -1,5 +1,7 @@
 package org.iesalandalus.programacion.reinaajedrez;
 
+import org.iesalandalus.programacion.reinaajedrez.modelo.Color;
+import org.iesalandalus.programacion.reinaajedrez.modelo.Reina;
 import org.iesalandalus.programacion.utilidades.Entrada;
 
 public class Consola {
@@ -8,7 +10,7 @@ public class Consola {
 
 	}
 
-	public void mostrarMenu() {
+	public static void mostrarMenu() {
 		System.out.println("Este es tu menú de opciones:");
 		System.out.println("-----------------------------");
 		System.out.println("1-Crear reina por defecto");
@@ -18,7 +20,7 @@ public class Consola {
 		System.out.println("-----------------------------");
 	}
 
-	public int elegirOpcionMenu() {
+	public static int elegirOpcionMenu() {
 		int opcion;
 		do {
 			System.out.print("Escoja una opción del menú: ");
@@ -26,6 +28,19 @@ public class Consola {
 		} while (opcion < 1 | opcion > 4);
 		System.out.print("Tu opción elegida es: ");
 		return opcion;
+	}
+
+	public static Color elegirColor() {
+		int opcion;
+		do {
+			System.out.println("Escoja un color (1.Blanco, 2.Negro) :");
+			opcion = Entrada.entero();
+		} while (opcion < 1 | opcion > 2);
+		if (opcion == 1) {
+			return Color.BLANCO;
+		}
+		return Color.NEGRO;
+
 	}
 
 }
