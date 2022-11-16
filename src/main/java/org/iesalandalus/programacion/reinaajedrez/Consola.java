@@ -1,6 +1,7 @@
 package org.iesalandalus.programacion.reinaajedrez;
 
 import org.iesalandalus.programacion.reinaajedrez.modelo.Color;
+import org.iesalandalus.programacion.reinaajedrez.modelo.Direccion;
 import org.iesalandalus.programacion.reinaajedrez.modelo.Reina;
 import org.iesalandalus.programacion.utilidades.Entrada;
 
@@ -55,6 +56,40 @@ public class Consola {
 		System.out.println("7-OESTE");
 		System.out.println("8-NOROESTE");
 		System.out.println("-----------------------------");
+	}
+
+	public static Direccion elegirDireccion() {
+		int opcion;
+		Direccion direccion = null;
+		do {
+			System.out.println("Escoja una dirección del menu anterior :");
+			opcion = Entrada.entero();
+		} while (opcion < 1 | opcion > 8);
+
+		switch (opcion) {
+		case 1:
+			direccion = Direccion.NORTE;
+			break;
+		case 2:
+			direccion = Direccion.NORESTE;
+			break;
+		case 3:
+			direccion = Direccion.ESTE;
+			break;
+		case 4:
+			direccion = Direccion.SURESTE;
+			break;
+		case 5:
+			direccion = Direccion.SUR;
+			break;
+		case 6:
+			direccion = Direccion.SUROESTE;
+			break;
+		case 7:
+			direccion = Direccion.OESTE;
+			break;
+		}
+		return direccion;
 	}
 
 }
