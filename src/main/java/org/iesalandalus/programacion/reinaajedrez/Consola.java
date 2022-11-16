@@ -34,7 +34,7 @@ public class Consola {
 	public static Color elegirColor() {
 		int opcion;
 		do {
-			System.out.println("Escoja un color (1.Blanco, 2.Negro) :");
+			System.out.print("Escoja un color (1.Blanco, 2.Negro) : ");
 			opcion = Entrada.entero();
 		} while (opcion < 1 | opcion > 2);
 		if (opcion == 1) {
@@ -62,7 +62,7 @@ public class Consola {
 		int opcion;
 		Direccion direccion = null;
 		do {
-			System.out.println("Escoja una dirección del menu anterior :");
+			System.out.print("Escoja una dirección del menu anterior :");
 			opcion = Entrada.entero();
 		} while (opcion < 1 | opcion > 8);
 
@@ -90,6 +90,13 @@ public class Consola {
 			break;
 		}
 		return direccion;
+	}
+
+	public static int elegirPasos() {
+		int pasos;
+		System.out.print("Escoja el número de pasos a mover :");
+		pasos = Entrada.entero();
+		return pasos;
 	}
 
 }
