@@ -13,12 +13,15 @@ public class MainApp {
 		switch (opcion) {
 		case 1:
 			crearReinaDefecto();
+			mostrarReina();
 			break;// Crear reina por defecto
 		case 2:
 			crearReinaColor();
+			mostrarReina();
 			break;// Crear reina eligiendo el color
 		case 3:
 			mover();
+			mostrarReina();
 			break;// Mover
 		case 4:
 			Consola.despedirse();
@@ -42,6 +45,13 @@ public class MainApp {
 		} catch (OperationNotSupportedException e) {
 			System.out.println(e.getMessage());
 		}
+	}
+
+	private static void mostrarReina() {
+		if (reina == null) {
+			System.out.println("No tiene ninguna reina creada");
+		}
+		System.out.println(reina.toString());
 	}
 
 	public static void main(String[] args) {
