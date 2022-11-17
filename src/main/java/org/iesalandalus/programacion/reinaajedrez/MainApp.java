@@ -1,5 +1,7 @@
 package org.iesalandalus.programacion.reinaajedrez;
 
+import javax.naming.OperationNotSupportedException;
+
 import org.iesalandalus.programacion.reinaajedrez.modelo.Color;
 import org.iesalandalus.programacion.reinaajedrez.modelo.Reina;
 
@@ -16,6 +18,7 @@ public class MainApp {
 			crearReinaColor();
 			break;// Crear reina eligiendo el color
 		case 3:
+			mover();
 			break;// Mover
 		case 4:
 			Consola.despedirse();
@@ -30,6 +33,15 @@ public class MainApp {
 	private static void crearReinaColor() {
 		reina = new Reina(Consola.elegirColor());
 
+	}
+
+	private static void mover() {
+		Consola.mostrarMenuDirecciones();
+		try {
+			reina.mover(Consola.elegirDireccion(), Consola.elegirPasos());
+		} catch (OperationNotSupportedException e) {
+			System.out.println(e.getMessage());
+		}
 	}
 
 	public static void main(String[] args) {
