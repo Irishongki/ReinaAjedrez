@@ -13,15 +13,24 @@ public class MainApp {
 		switch (opcion) {
 		case 1:
 			crearReinaDefecto();
+			System.out.println("Tu reina es: ");
 			mostrarReina();
+			System.out.println("");
 			break;// Crear reina por defecto
 		case 2:
 			crearReinaColor();
+			System.out.println("Tu reina es: ");
 			mostrarReina();
+			System.out.println("");
 			break;// Crear reina eligiendo el color
 		case 3:
-			mover();
+			try {
+				mover();
+			} catch (NullPointerException e) {
+			}
+			System.out.println("Tu reina es: ");
 			mostrarReina();
+			System.out.println("");
 			break;// Mover
 		case 4:
 			Consola.despedirse();
@@ -49,12 +58,20 @@ public class MainApp {
 
 	private static void mostrarReina() {
 		if (reina == null) {
+			System.out.println("");
 			System.out.println("No tiene ninguna reina creada");
-		}
-		System.out.println(reina.toString());
+		} else
+			System.out.println(reina.toString());
 	}
 
 	public static void main(String[] args) {
+		int opcion;
+
+		do {
+			Consola.mostrarMenu();
+			opcion = Consola.elegirOpcionMenu();
+			ejecutarOpcion(opcion);
+		} while (opcion != 4);
 
 	}
-}
+} 
