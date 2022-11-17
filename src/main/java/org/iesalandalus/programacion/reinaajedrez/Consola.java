@@ -27,7 +27,6 @@ public class Consola {
 			System.out.print("Escoja una opción del menú: ");
 			opcion = Entrada.entero();
 		} while (opcion < 1 | opcion > 4);
-		System.out.print("Tu opción elegida es: ");
 		return opcion;
 	}
 
